@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Layout_Background_Style">
+        <!--填充色-->
+        <attr name="layout_fill_color" format="reference|integer"/>
+        <!--圆角-->
+        <attr name="layout_corner_radius" format="reference|float"/>
+        <!--边框大小-->
+        <attr name="layout_stroke_width" format="reference|float"/>
+        <!--边框颜色-->
+        <attr name="layout_stroke_color" format="reference|integer"/>
+    </declare-styleable>
+</resources>
