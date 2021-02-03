@@ -7,7 +7,7 @@ import android.view.View
  *@author liuliheng
  *@time 2021/2/3  21:45
  **/
-class GradientDrawableUtil private constructor() {
+object GradientDrawableUtil {
 
     class Builder(private val fillColor: Int, private val view: View) {
 
