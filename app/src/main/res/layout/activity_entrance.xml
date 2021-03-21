@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginLeft="@dimen/dp_10"
+    android:layout_marginStart="@dimen/dp_10"
+    android:layout_marginRight="@dimen/dp_10"
+    android:layout_marginEnd="@dimen/dp_10"
+    tools:context=".EntranceActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/gradient_drawable_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:textAllCaps="false"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="@string/to_gradient_drawable"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/vector_drawable_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:textAllCaps="false"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="@string/to_vector_drawable"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

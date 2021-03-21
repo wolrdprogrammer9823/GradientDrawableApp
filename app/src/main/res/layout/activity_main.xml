@@ -22,7 +22,10 @@
             android:layout_marginEnd="@dimen/dp_10"
             android:orientation="vertical"
             android:gravity="center"
-            app:layout_fill_color="@color/purple_200"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            app:layout_fill_color="@color/layout_bg_color"
             app:layout_corner_radius="@dimen/dp_10"
             app:layout_stroke_width="@dimen/dp_1"
             app:layout_stroke_color="@color/teal_200">
