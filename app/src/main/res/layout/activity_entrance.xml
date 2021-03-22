@@ -12,10 +12,14 @@
     android:layout_marginEnd="@dimen/dp_10"
     tools:context=".EntranceActivity">
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.wolfsea.gradientdrawableapp.StateListDrawableAppcompatButton
         android:id="@+id/gradient_drawable_btn"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_60"
+        style="?android:attr/borderlessButtonStyle"
+        app:state_list_unpressed_color="@color/red"
+        app:state_list_pressed_color="@color/yellow"
+        app:state_list_corner_radius="@dimen/dp_10"
         android:textAllCaps="false"
         android:layout_marginTop="@dimen/dp_10"
         android:text="@string/to_gradient_drawable"/>
