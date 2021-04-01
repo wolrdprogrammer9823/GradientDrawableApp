@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.wolfsea.gradientdrawableapp.GradientDrawableLinearLayout
+        <!--LinearLayout-->
+        <com.wolfsea.lib_drawable.GradientDrawableLinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_200"
             android:layout_marginTop="@dimen/dp_10"
@@ -25,7 +26,7 @@
             android:clickable="true"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            app:layout_fill_color="@color/layout_bg_color"
+            app:layout_fill_color="@color/red"
             app:layout_corner_radius="@dimen/dp_10"
             app:layout_stroke_width="@dimen/dp_1"
             app:layout_stroke_color="@color/teal_200">
@@ -34,9 +35,34 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/linear_layout"/>
-        </com.wolfsea.gradientdrawableapp.GradientDrawableLinearLayout>
+        </com.wolfsea.lib_drawable.GradientDrawableLinearLayout>
 
-        <com.wolfsea.gradientdrawableapp.GradientDrawableRelativeLayout
+        <com.wolfsea.lib_drawable.GradientDrawableTwoCornersLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            app:layout_fill_color="@color/purple_200"
+            app:layout_corner_radius="@dimen/dp_10"
+            app:layout_stroke_width="@dimen/dp_1"
+            app:layout_stroke_color="@color/teal_700">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/left_top_corner_linear_layout"/>
+        </com.wolfsea.lib_drawable.GradientDrawableTwoCornersLinearLayout>
+
+        <!--RelativeLayout-->
+        <com.wolfsea.lib_drawable.GradientDrawableRelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_200"
             android:layout_marginTop="@dimen/dp_10"
@@ -54,9 +80,30 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="@string/relative_layout"/>
-        </com.wolfsea.gradientdrawableapp.GradientDrawableRelativeLayout>
+        </com.wolfsea.lib_drawable.GradientDrawableRelativeLayout>
 
-        <com.wolfsea.gradientdrawableapp.GradientDrawableFrameLayout
+        <com.wolfsea.lib_drawable.GradientDrawableTwoCornersRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_10"
+            app:layout_fill_color="@color/teal_700"
+            app:layout_corner_radius="@dimen/dp_10"
+            app:layout_stroke_width="@dimen/dp_1"
+            app:layout_stroke_color="@color/purple_700">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/left_top_corner_relative_layout"/>
+        </com.wolfsea.lib_drawable.GradientDrawableTwoCornersRelativeLayout>
+
+        <!--FrameLayout-->
+        <com.wolfsea.lib_drawable.GradientDrawableFrameLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_200"
             android:layout_marginTop="@dimen/dp_10"
@@ -74,9 +121,30 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="@string/frame_layout"/>
-        </com.wolfsea.gradientdrawableapp.GradientDrawableFrameLayout>
+        </com.wolfsea.lib_drawable.GradientDrawableFrameLayout>
 
-        <com.wolfsea.gradientdrawableapp.GradientDrawableConstraintLayout
+        <com.wolfsea.lib_drawable.GradientDrawableTwoCornersFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_10"
+            app:layout_fill_color="@color/yellow"
+            app:layout_corner_radius="@dimen/dp_10"
+            app:layout_stroke_width="@dimen/dp_1"
+            app:layout_stroke_color="@color/black">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/left_top_corner_frame_layout"/>
+        </com.wolfsea.lib_drawable.GradientDrawableTwoCornersFrameLayout>
+
+        <!--ConstraintLayout-->
+        <com.wolfsea.lib_drawable.GradientDrawableConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_200"
             android:layout_marginTop="@dimen/dp_10"
@@ -97,9 +165,32 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:text="@string/constraint_layout"/>
-        </com.wolfsea.gradientdrawableapp.GradientDrawableConstraintLayout>
+        </com.wolfsea.lib_drawable.GradientDrawableConstraintLayout>
+
+        <com.wolfsea.lib_drawable.GradientDrawableTwoCornersConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:orientation="vertical"
+            app:layout_fill_color="@color/teal_200"
+            app:layout_corner_radius="@dimen/dp_10"
+            app:layout_stroke_width="@dimen/dp_1"
+            app:layout_stroke_color="@color/red">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="@string/left_top_corner_constraint_layout"/>
+        </com.wolfsea.lib_drawable.GradientDrawableTwoCornersConstraintLayout>
 
     </LinearLayout>
-
 
 </ScrollView>

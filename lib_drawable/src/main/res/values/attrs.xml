@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="Layout_Background_Style">
+        <!--填充色-->
+        <attr name="layout_fill_color" format="reference|integer"/>
+        <!--圆角-->
+        <attr name="layout_corner_radius" format="reference|float"/>
+        <!--边框大小-->
+        <attr name="layout_stroke_width" format="reference|float"/>
+        <!--边框颜色-->
+        <attr name="layout_stroke_color" format="reference|integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="ImageView_Background_Style">
+        <!--填充色-->
+        <attr name="iv_fill_color" format="reference|integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="state_list_drawable_Style">
+        <!--按下颜色-->
+        <attr name="state_list_unpressed_color" format="reference|integer"/>
+        <!--抬起颜色-->
+        <attr name="state_list_pressed_color" format="reference|integer"/>
+        <!--圆角-->
+        <attr name="state_list_corner_radius" format="reference|float"/>
+        <!--边框大小-->
+        <attr name="state_list_stroke_width" format="reference|float"/>
+        <!--边框颜色-->
+        <attr name="state_list_stroke_color" format="reference|integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="Layout_Icon_Text_Style">
+        <!--布局图标-->
+        <attr name="layout_icon" format="reference|integer"/>
+        <!--文本-->
+        <attr name="layout_text" format="reference|string"/>
+        <!--文本颜色-->
+        <attr name="layout_text_color" format="reference|integer"/>
+        <!--文本大小-->
+        <attr name="layout_text_size" format="reference|float"/>
+        <!--边距-->
+        <attr name="layout_dimen" format="reference|float"/>
+        <!--方向-->
+        <attr name="layout_direction" format="reference|integer"/>
+    </declare-styleable>
+
+</resources>

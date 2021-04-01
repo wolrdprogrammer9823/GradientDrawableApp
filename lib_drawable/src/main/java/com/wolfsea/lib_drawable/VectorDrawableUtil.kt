@@ -1,4 +1,4 @@
-package com.wolfsea.gradientdrawableapp
+package com.wolfsea.lib_drawable
 import android.graphics.drawable.VectorDrawable
 import android.view.View
 

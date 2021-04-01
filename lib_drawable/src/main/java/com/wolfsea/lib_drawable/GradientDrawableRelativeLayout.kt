@@ -1,22 +1,22 @@
-package com.wolfsea.gradientdrawableapp
+package com.wolfsea.lib_drawable
 import android.content.Context
 import android.util.AttributeSet
-import android.widget.FrameLayout
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 
 /**
  *@desc GradientDrawableLinearLayout
  *@author liuliheng
  *@time 2021/2/3  22:04
  **/
-class GradientDrawableFrameLayout : FrameLayout {
+class GradientDrawableRelativeLayout : RelativeLayout {
 
-    constructor(context: Context, attributeSet: AttributeSet?)
+    constructor(context: Context?, attributeSet: AttributeSet?)
             : super(context, attributeSet) {
         init(context, attributeSet)
     }
 
-    constructor(context: Context, attributeSet: AttributeSet?, defaultInt: Int)
+    constructor(context: Context?, attributeSet: AttributeSet?, defaultInt: Int)
             : super(context, attributeSet, defaultInt) {
         init(context,attributeSet)
     }
@@ -26,9 +26,9 @@ class GradientDrawableFrameLayout : FrameLayout {
      *@author:liuliheng
      *@time: 2021/2/3 22:05
     **/
-    private fun init(context: Context, attributeSet: AttributeSet?) {
+    private fun init(context: Context?, attributeSet: AttributeSet?) {
 
-        var fillColor: Int = context.resources?.getColor(R.color.teal_700)!!
+        var fillColor: Int = context?.resources?.getColor(R.color.teal_700)!!
 
         var cornerRadius: Float? = null
         var strokeWidth: Float? = null
@@ -55,7 +55,7 @@ class GradientDrawableFrameLayout : FrameLayout {
             recycle()
         }
 
-        GradientDrawableUtil.Builder(fillColor, this@GradientDrawableFrameLayout)
+        GradientDrawableUtil.Builder(fillColor, this@GradientDrawableRelativeLayout)
             .setCornerRadius(cornerRadius)
             .setStrokeWidth(strokeWidth = strokeWidth!!.toInt())
             .setStrokeColor(strokeColor)

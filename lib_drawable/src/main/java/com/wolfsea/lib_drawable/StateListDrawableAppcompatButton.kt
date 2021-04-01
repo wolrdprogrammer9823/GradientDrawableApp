@@ -1,4 +1,4 @@
-package com.wolfsea.gradientdrawableapp
+package com.wolfsea.lib_drawable
 import android.content.Context
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatButton

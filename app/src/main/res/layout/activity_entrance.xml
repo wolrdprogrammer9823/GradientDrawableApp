@@ -12,7 +12,7 @@
     android:layout_marginEnd="@dimen/dp_10"
     tools:context=".EntranceActivity">
 
-    <com.wolfsea.gradientdrawableapp.StateListDrawableAppcompatButton
+    <com.wolfsea.lib_drawable.StateListDrawableAppcompatButton
         android:id="@+id/gradient_drawable_btn"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_60"
@@ -31,5 +31,23 @@
         android:textAllCaps="false"
         android:layout_marginTop="@dimen/dp_10"
         android:text="@string/to_vector_drawable"/>
+
+    <com.wolfsea.lib_drawable.IconTextRelativeLayout
+        android:id="@+id/text_drawable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_icon="@mipmap/ic_launcher"
+        app:layout_text="@string/text_drawable"
+        app:layout_text_color="@color/purple_500"
+        app:layout_text_size="@dimen/dp_10"
+        app:layout_dimen="@dimen/dp_10"/>
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/content_tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        app:tabMode="fixed"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

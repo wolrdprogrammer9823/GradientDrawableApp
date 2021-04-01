@@ -1,9 +1,14 @@
 <resources>
     <string name="app_name">GradientDrawableApp</string>
     <string name="linear_layout">线性布局</string>
+    <string name="left_top_corner_linear_layout">左上圆角线性布局</string>
     <string name="relative_layout">相对布局</string>
+    <string name="left_top_corner_relative_layout">左上圆角相对布局</string>
     <string name="frame_layout">帧布局</string>
+    <string name="left_top_corner_frame_layout">左上圆角帧布局</string>
     <string name="constraint_layout">约束布局</string>
+    <string name="left_top_corner_constraint_layout">左上圆角约束布局</string>
     <string name="to_gradient_drawable">to_gradient_drawable</string>
     <string name="to_vector_drawable">to_vector_drawable</string>
+    <string name="text_drawable">text_drawable</string>
 </resources>

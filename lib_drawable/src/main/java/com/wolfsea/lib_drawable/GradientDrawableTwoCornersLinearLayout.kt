@@ -1,15 +1,14 @@
-package com.wolfsea.gradientdrawableapp
+package com.wolfsea.lib_drawable
 import android.content.Context
 import android.util.AttributeSet
 import android.widget.LinearLayout
-import android.widget.RelativeLayout
 
 /**
- *@desc GradientDrawableLinearLayout
- *@author liuliheng
- *@time 2021/2/3  22:04
- **/
-class GradientDrawableRelativeLayout : RelativeLayout {
+ *@desc GradientDrawableTwoCornersLinearLayout
+ *@author:liuliheng
+ *@time: 2021/4/1 23:17
+**/
+class GradientDrawableTwoCornersLinearLayout : LinearLayout {
 
     constructor(context: Context?, attributeSet: AttributeSet?)
             : super(context, attributeSet) {
@@ -55,7 +54,7 @@ class GradientDrawableRelativeLayout : RelativeLayout {
             recycle()
         }
 
-        GradientDrawableUtil.Builder(fillColor, this@GradientDrawableRelativeLayout)
+        GradientTwoCornersDrawableUtil.Builder(fillColor, this@GradientDrawableTwoCornersLinearLayout)
             .setCornerRadius(cornerRadius)
             .setStrokeWidth(strokeWidth = strokeWidth!!.toInt())
             .setStrokeColor(strokeColor)

@@ -1,21 +1,22 @@
-package com.wolfsea.gradientdrawableapp
+package com.wolfsea.lib_drawable
 import android.content.Context
 import android.util.AttributeSet
 import android.widget.LinearLayout
+import androidx.constraintlayout.widget.ConstraintLayout
 
 /**
- *@desc GradientDrawableLinearLayout
- *@author liuliheng
- *@time 2021/2/3  22:04
- **/
-class GradientDrawableLinearLayout : LinearLayout {
+ *@desc GradientDrawableTwoCornersConstraintLayout
+ *@author:liuliheng
+ *@time: 2021/4/1 23:37
+**/
+class GradientDrawableTwoCornersConstraintLayout : ConstraintLayout {
 
-    constructor(context: Context?, attributeSet: AttributeSet?)
+    constructor(context: Context, attributeSet: AttributeSet?)
             : super(context, attributeSet) {
         init(context, attributeSet)
     }
 
-    constructor(context: Context?, attributeSet: AttributeSet?, defaultInt: Int)
+    constructor(context: Context, attributeSet: AttributeSet?, defaultInt: Int)
             : super(context, attributeSet, defaultInt) {
         init(context,attributeSet)
     }
@@ -25,9 +26,9 @@ class GradientDrawableLinearLayout : LinearLayout {
      *@author:liuliheng
      *@time: 2021/2/3 22:05
     **/
-    private fun init(context: Context?, attributeSet: AttributeSet?) {
+    private fun init(context: Context, attributeSet: AttributeSet?) {
 
-        var fillColor: Int = context?.resources?.getColor(R.color.teal_700)!!
+        var fillColor: Int = context.resources?.getColor(R.color.teal_700)!!
 
         var cornerRadius: Float? = null
         var strokeWidth: Float? = null
@@ -54,7 +55,7 @@ class GradientDrawableLinearLayout : LinearLayout {
             recycle()
         }
 
-        GradientDrawableUtil.Builder(fillColor, this@GradientDrawableLinearLayout)
+        GradientTwoCornersDrawableUtil.Builder(fillColor, this@GradientDrawableTwoCornersConstraintLayout)
             .setCornerRadius(cornerRadius)
             .setStrokeWidth(strokeWidth = strokeWidth!!.toInt())
             .setStrokeColor(strokeColor)

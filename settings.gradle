@@ -1,2 +1,3 @@
+include ':lib_drawable'
 include ':app'
 rootProject.name = "GradientDrawableApp"

@@ -22,7 +22,7 @@
             app:layout_constraintTop_toTopOf="parent"
             android:background="@drawable/ic_baseline_arrow_forward_ios_24"/>
 
-        <com.wolfsea.gradientdrawableapp.VectorDrawableAppcompatImageView
+        <com.wolfsea.lib_drawable.VectorDrawableAppcompatImageView
             android:layout_width="@dimen/dp_200"
             android:layout_height="match_parent"
             app:layout_constraintLeft_toRightOf="@id/left_iv"
