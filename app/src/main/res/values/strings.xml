@@ -11,4 +11,5 @@
     <string name="to_gradient_drawable">to_gradient_drawable</string>
     <string name="to_vector_drawable">to_vector_drawable</string>
     <string name="text_drawable">text_drawable</string>
+    <string name="text_tip">建议</string>
 </resources>

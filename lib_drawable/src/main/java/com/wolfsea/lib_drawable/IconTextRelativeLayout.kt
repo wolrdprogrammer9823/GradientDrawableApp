@@ -1,6 +1,7 @@
 package com.wolfsea.lib_drawable
 import android.content.Context
 import android.util.AttributeSet
+import android.util.Log
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
@@ -29,18 +30,40 @@ class IconTextRelativeLayout : RelativeLayout {
     **/
     private fun init(context: Context, attributeSet: AttributeSet?) {
 
+        //图标
         var layoutIcon : Int?
+        //图标-宽
+        var layoutIconWidth : Int?
+        //图标-高
+        var layoutIconHeight : Int?
+        //文本
         var layoutText : String?
+        //文本-宽
+        var layoutTextWidth : Int?
+        //文本-高
+        var layoutTextHeight : Int?
+        //文本-颜色
         var layoutTextColor : Int?
+        //文本-大小
         var layoutTextSize : Float?
-        var layoutDimen : Float?
-        var layoutDirection : Int?
+        //图标文本间距
+        var layoutIconTextDimen : Float?
+        //图标文本方向
+        var layoutIconTextDirection : Int?
 
         context.obtainStyledAttributes(attributeSet, R.styleable.Layout_Icon_Text_Style).apply {
 
             layoutIcon = getResourceId(R.styleable.Layout_Icon_Text_Style_layout_icon, -1)
 
+            layoutIconWidth = getDimension(R.styleable.Layout_Icon_Text_Style_layout_icon_width, LayoutParams.WRAP_CONTENT.toFloat()).toInt()
+
+            layoutIconHeight = getDimension(R.styleable.Layout_Icon_Text_Style_layout_icon_height, LayoutParams.WRAP_CONTENT.toFloat()).toInt()
+
             layoutText = getString(R.styleable.Layout_Icon_Text_Style_layout_text)
+
+            layoutTextWidth = getDimension(R.styleable.Layout_Icon_Text_Style_layout_text_width, LayoutParams.WRAP_CONTENT.toFloat()).toInt()
+
+            layoutTextHeight = getDimension(R.styleable.Layout_Icon_Text_Style_layout_text_height, LayoutParams.WRAP_CONTENT.toFloat()).toInt()
 
             layoutTextColor = getColor(
                 R.styleable.Layout_Icon_Text_Style_layout_text_color,
@@ -54,9 +77,9 @@ class IconTextRelativeLayout : RelativeLayout {
 
             layoutText = getString(R.styleable.Layout_Icon_Text_Style_layout_text)
 
-            layoutDimen = getDimension(R.styleable.Layout_Icon_Text_Style_layout_dimen, 0F)
+            layoutIconTextDimen = getDimension(R.styleable.Layout_Icon_Text_Style_layout_icon_text_dimen, 0F)
 
-            layoutDirection = getInt(R.styleable.Layout_Icon_Text_Style_layout_direction, 0)
+            layoutIconTextDirection = getInt(R.styleable.Layout_Icon_Text_Style_layout_icon_text_direction, 0)
 
             recycle()
         }
@@ -65,39 +88,60 @@ class IconTextRelativeLayout : RelativeLayout {
         imageView.id = R.id.layout_icon
         imageView.setBackgroundResource(layoutIcon!!)
         val imageViewLayoutParams = LayoutParams(
-            LayoutParams.WRAP_CONTENT,
-            LayoutParams.WRAP_CONTENT
+            layoutIconWidth!!,
+            layoutIconHeight!!
         )
-        imageViewLayoutParams.addRule(RelativeLayout.CENTER_VERTICAL)
-        imageView.layoutParams = imageViewLayoutParams
+
+        layoutIconTextDirection?.let {
+            when (it) {
+                0 -> {
+                    imageViewLayoutParams.addRule(CENTER_VERTICAL)
+                    imageView.layoutParams = imageViewLayoutParams
+                }
+                1 -> {
+                    imageViewLayoutParams.addRule(ALIGN_TOP)
+                    imageView.layoutParams = imageViewLayoutParams
+                }
+            }
+        }
 
         val textView = TextView(context, attributeSet)
         textView.id = R.id.layout_text
         textView.text = layoutText
         textView.setTextColor(layoutTextColor!!)
-        textView.textSize = layoutTextSize!!
+        textView.textSize = layoutTextSize!!.div(resources.displayMetrics.density)
+
         val textViewLayoutParams = LayoutParams(
-            LayoutParams.WRAP_CONTENT,
-            LayoutParams.WRAP_CONTENT
+            layoutTextWidth!!,
+            layoutTextHeight!!
         )
 
-        textViewLayoutParams.addRule(RelativeLayout.RIGHT_OF, R.id.layout_icon)
-        layoutDirection?.let {
+        Log.d(TAG, "layoutIconTextDirection->${layoutIconTextDirection}")
+
+        layoutIconTextDirection?.let {
             when (it) {
                 0 -> {
-                    textViewLayoutParams.addRule(RelativeLayout.RIGHT_OF, R.id.layout_icon)
+                    textViewLayoutParams.addRule(RIGHT_OF, R.id.layout_icon)
+                    textViewLayoutParams.leftMargin = layoutIconTextDimen!!.toInt()
+                    textViewLayoutParams.addRule(CENTER_VERTICAL)
+                    textView.layoutParams = textViewLayoutParams
                 }
+
                 1 -> {
-                    textViewLayoutParams.addRule(RelativeLayout.BELOW, R.id.layout_icon)
+                    textViewLayoutParams.addRule(BELOW, R.id.layout_icon)
+                    textViewLayoutParams.topMargin = layoutIconTextDimen!!.toInt()
+                    textViewLayoutParams.addRule(CENTER_HORIZONTAL)
+                    textView.layoutParams = textViewLayoutParams
                 }
             }
         }
 
-        textViewLayoutParams.leftMargin = layoutDimen!!.toInt()
-        textViewLayoutParams.addRule(RelativeLayout.CENTER_VERTICAL)
-        textView.layoutParams = textViewLayoutParams
-
         addView(imageView)
         addView(textView)
     }
+
+    companion object {
+        const val TAG = "IconTextLayout"
+    }
+
 }

@@ -38,16 +38,32 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_10"
         app:layout_icon="@mipmap/ic_launcher"
+        app:layout_icon_width="@dimen/dp_45"
+        app:layout_icon_height="@dimen/dp_45"
         app:layout_text="@string/text_drawable"
         app:layout_text_color="@color/purple_500"
-        app:layout_text_size="@dimen/dp_10"
-        app:layout_dimen="@dimen/dp_10"/>
+        app:layout_text_size="@dimen/dp_18"
+        app:layout_icon_text_dimen="@dimen/dp_10"/>
 
+    <com.wolfsea.lib_drawable.IconTextRelativeLayout
+        android:id="@+id/text_drawable2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_icon="@mipmap/ic_launcher"
+        app:layout_icon_width="@dimen/dp_45"
+        app:layout_icon_height="@dimen/dp_45"
+        app:layout_text="@string/text_tip"
+        app:layout_text_color="@color/purple_500"
+        app:layout_text_size="@dimen/dp_18"
+        app:layout_icon_text_dimen="@dimen/dp_5"
+        app:layout_icon_text_direction="1"/>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/content_tab_layout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_60"
+        android:visibility="visible"
         app:tabMode="fixed"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

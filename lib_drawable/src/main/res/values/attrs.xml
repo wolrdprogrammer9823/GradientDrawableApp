@@ -33,16 +33,24 @@
     <declare-styleable name="Layout_Icon_Text_Style">
         <!--布局图标-->
         <attr name="layout_icon" format="reference|integer"/>
+        <!--布局图标宽-->
+        <attr name="layout_icon_width" format="reference|integer"/>
+        <!--布局图标高-->
+        <attr name="layout_icon_height" format="reference|integer"/>
         <!--文本-->
         <attr name="layout_text" format="reference|string"/>
+        <!--文本宽-->
+        <attr name="layout_text_width" format="reference|integer"/>
+        <!--文本高-->
+        <attr name="layout_text_height" format="reference|integer"/>
         <!--文本颜色-->
         <attr name="layout_text_color" format="reference|integer"/>
         <!--文本大小-->
         <attr name="layout_text_size" format="reference|float"/>
-        <!--边距-->
-        <attr name="layout_dimen" format="reference|float"/>
-        <!--方向-->
-        <attr name="layout_direction" format="reference|integer"/>
+        <!--图标文本边距-->
+        <attr name="layout_icon_text_dimen" format="reference|float"/>
+        <!--图标文本方向-->
+        <attr name="layout_icon_text_direction" format="reference|integer"/>
     </declare-styleable>
 
 </resources>
