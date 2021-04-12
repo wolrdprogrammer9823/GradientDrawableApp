@@ -16,6 +16,10 @@ import com.wolfsea.gradientdrawableapp.uitl.ActivityUtil
 import com.wolfsea.gradientdrawableapp.uitl.ActivityUtil.startActivity
 import kotlinx.android.synthetic.main.activity_entrance.*
 import kotlinx.android.synthetic.main.tab_layout_item.view.*
+import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
 
 class EntranceActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -111,8 +115,21 @@ class EntranceActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(view: View?) {
 
         when (view?.id) {
+
             R.id.gradient_drawable_btn -> {
-                 startActivity<MainActivity>()
+                 CoroutineScope(Job() + Dispatchers.Main).launch {
+                     flow {
+                         delay(5000)
+                         emit(changeText())
+                     }.flowOn(Dispatchers.IO)
+                         .collect {
+                             result ->
+                               run {
+                                  gradient_drawable_btn.text = result
+                                  startActivity<MainActivity>()
+                               }
+                         }
+                 }
             }
 
             R.id.vector_drawable_btn -> {
@@ -122,6 +139,8 @@ class EntranceActivity : AppCompatActivity(), View.OnClickListener {
             else -> {}
         }
     }
+
+    private fun changeText(): String = "to_gradient_drawable_new"
 
     companion object {
         const val TAG = "Entrance"
