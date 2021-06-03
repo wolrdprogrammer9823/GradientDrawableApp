@@ -1,6 +1,9 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+    id 'maven'
 }
 
 android {
@@ -40,7 +43,17 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
-    testImplementation 'junit:junit:4.+'
+    testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}
+
+uploadArchives {
+    repositories.mavenDeployer{
+        //配置本地仓库路径，项目根目录下的repository目录中
+        repository(url: uri('../repository'))
+        pom.groupId = "com.gradient.viewgradientlib"//唯一标识（通常为模块包名，也可以任意）
+        pom.artifactId = "ViewGradientLib" //项目名称（通常为类库模块名称，也可以任意）
+        pom.version = "1.0.0"//版本号
+    }
 }
