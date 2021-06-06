@@ -1,21 +1,31 @@
 apply plugin: "maven"
+apply plugin: "maven-publish"
 apply plugin: "signing"
+apply plugin: 'com.android.library'
 
-configurations {
-    deployerJars
-}
+//configurations {
+//    deployerJars
+//}
 
-repositories {
-    mavenCentral()
+//repositories {
+//    mavenCentral()
+//}
+
+android {
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main']
+        }
+    }
 }
 
 //是否是发布版本
-static def isReleaseBuild() {
+def isReleaseBuild() {
     return !VERSIONS.contains("SNAPSHOT")
 }
 
 //获取仓库url
-static def getRepositoryUrl() {
+def getRepositoryUrl() {
     return isReleaseBuild() ? RELEASE_URL : SNAPSHOT_URL
 }
 
@@ -34,10 +44,10 @@ uploadArchives {
 }
 
 //进行数字签名
-signing {
-    required { isReleaseBuild() && gradle.taskGraph.hasTask("uploadArchives") }
-    signing configurations.archives
-}
+//signing {
+//    required { isReleaseBuild() && gradle.taskGraph.hasTask("uploadArchives") }
+//    signing configurations.archives
+//}
 
 //type显示指定任务或者任务类型,这里指定要执行Javadoc这个task
 //task androidJavaDocs(type: Javadoc) {
@@ -52,13 +62,13 @@ signing {
 //}
 
 //生成sources.jar
-task androidSourcesJar(type: Jar) {
+task androidSourceJar(type: Jar) {
     classifier = "sources"
     from android.sourceSets.main.java.srcDirs
 }
 
 artifacts {
     //archives androidJavaDocsJar
-    archives androidSourcesJar
+    archives androidSourceJar
 }
 
