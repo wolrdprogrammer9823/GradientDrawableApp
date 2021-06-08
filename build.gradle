@@ -21,7 +21,8 @@ allprojects {
         //本地仓库地址
         //maven { url 'file:\\F:\\GradientDrawableApp\\repository'}
         //私有服务器仓库地址
-        maven { url 'http://127.0.0.1:8088/repository/maven-snapshots/' }
+        //maven { url 'http://127.0.0.1:8088/repository/maven-snapshots/' }
+        maven { url "${if (VERSIONS.contains("SNAPSHOT")) SNAPSHOT_URL else RELEASE_URL}" }
     }
 }
 

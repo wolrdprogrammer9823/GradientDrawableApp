@@ -1,15 +1,6 @@
 apply plugin: "maven"
 apply plugin: "maven-publish"
-apply plugin: "signing"
 apply plugin: 'com.android.library'
-
-//configurations {
-//    deployerJars
-//}
-
-//repositories {
-//    mavenCentral()
-//}
 
 android {
     sourceSets {
@@ -21,7 +12,13 @@ android {
 
 //是否是发布版本
 def isReleaseBuild() {
-    return !VERSIONS.contains("SNAPSHOT")
+    def version
+    if (PUBLISH_SNAP_SHOT.toBoolean()) {
+        version = VERIONS_SNAPSHOT
+    } else {
+        version = VERSIONS
+    }
+    return !version.contains("SNAPSHOT")
 }
 
 //获取仓库url
@@ -42,12 +39,6 @@ uploadArchives {
         }
     }
 }
-
-//进行数字签名
-//signing {
-//    required { isReleaseBuild() && gradle.taskGraph.hasTask("uploadArchives") }
-//    signing configurations.archives
-//}
 
 //type显示指定任务或者任务类型,这里指定要执行Javadoc这个task
 //task androidJavaDocs(type: Javadoc) {
