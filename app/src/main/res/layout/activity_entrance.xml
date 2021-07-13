@@ -24,6 +24,18 @@
         android:layout_marginTop="@dimen/dp_10"
         android:text="@string/to_gradient_drawable"/>
 
+    <com.wolfsea.lib_drawable.StateListDrawableAppcompatButton
+        android:id="@+id/define_circle_view_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        style="?android:attr/borderlessButtonStyle"
+        app:state_list_unpressed_color="@color/teal_200"
+        app:state_list_pressed_color="@color/purple_200"
+        app:state_list_corner_radius="@dimen/dp_10"
+        android:textAllCaps="false"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="@string/define_circle_progress"/>
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/vector_drawable_btn"
         android:layout_width="match_parent"

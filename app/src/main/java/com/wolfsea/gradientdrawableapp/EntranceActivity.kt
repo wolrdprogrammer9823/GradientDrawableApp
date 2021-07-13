@@ -30,6 +30,7 @@ class EntranceActivity : AppCompatActivity(), View.OnClickListener {
 
         gradient_drawable_btn.setOnClickListener(this)
         vector_drawable_btn.setOnClickListener(this)
+        define_circle_view_btn.setOnClickListener(this)
 
         Log.d(TAG, "${gradient_drawable_btn.background.javaClass.simpleName}")
 
@@ -134,6 +135,10 @@ class EntranceActivity : AppCompatActivity(), View.OnClickListener {
 
             R.id.vector_drawable_btn -> {
                 startActivity<VectorDrawableActivity>()
+            }
+
+            R.id.define_circle_view_btn -> {
+                startActivity<DefineCircleProgressActivity>()
             }
 
             else -> {}
