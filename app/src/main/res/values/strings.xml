@@ -15,4 +15,6 @@
     <string name="text_drawable">text_drawable</string>
     <string name="text_tip">建议</string>
     <string name="define_circle_progress">自定义圆形进度条</string>
+    <string name="paste_content">请粘贴内容</string>
+    <string name="pasted_content">被粘贴内容</string>
 </resources>
