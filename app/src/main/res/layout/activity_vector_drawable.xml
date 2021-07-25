@@ -44,9 +44,22 @@
         android:textSize="@dimen/sp_20"/>
 
     <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/pasted_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/pasted_text"
         android:layout_marginTop="@dimen/dp_10"
         android:hint="@string/paste_content"/>
+
+    <com.wolfsea.gradientdrawableapp.view.ShowLimitedContentTextView
+        android:layout_width="@dimen/dp_200"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_200"
+        android:ellipsize="end"
+        android:lines="1"
+        android:ems="3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pasted_edit_text"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="@string/show_limited_content"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
