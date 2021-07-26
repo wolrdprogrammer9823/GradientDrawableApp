@@ -44,6 +44,15 @@
         android:layout_marginTop="@dimen/dp_10"
         android:text="@string/to_vector_drawable"/>
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/appcompat_edittext_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:background="@color/purple_500"
+        android:textAllCaps="false"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="@string/to_appcompat_edittext"/>
+
     <com.wolfsea.lib_drawable.IconTextRelativeLayout
         android:id="@+id/text_drawable"
         android:layout_width="match_parent"

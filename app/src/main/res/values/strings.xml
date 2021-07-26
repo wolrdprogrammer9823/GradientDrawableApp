@@ -12,10 +12,13 @@
     <string name="left_top_corner_constraint_layout">左上圆角约束布局</string>
     <string name="to_gradient_drawable">to_gradient_drawable</string>
     <string name="to_vector_drawable">to_vector_drawable</string>
+    <string name="to_appcompat_edittext">to_appcompat_edittext</string>
     <string name="text_drawable">text_drawable</string>
     <string name="text_tip">建议</string>
     <string name="define_circle_progress">自定义圆形进度条</string>
     <string name="paste_content">请粘贴内容</string>
     <string name="pasted_content">被粘贴内容</string>
     <string name="show_limited_content">郑州常年平均全年降雨量为640.8mm，相当于三天下了以往一年的量。从气候学的角度来看</string>
+    <string name="number_hint">请输入数字</string>
+    <string name="clear_number">清空数字</string>
 </resources>
